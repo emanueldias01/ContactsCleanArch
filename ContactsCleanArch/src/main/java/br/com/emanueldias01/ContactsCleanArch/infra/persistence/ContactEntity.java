@@ -3,7 +3,7 @@ package br.com.emanueldias01.ContactsCleanArch.infra.persistence;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "usuarios")
+@Table(name = "contacts")
 public class ContactEntity {
 
     @Id
