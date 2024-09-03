@@ -12,6 +12,11 @@ public class ContactEntity {
     private String name;
     private Long phone;
 
+    public ContactEntity(String name, Long phone){
+        this.name = name;
+        this.phone = phone;
+    }
+
     public Long getId() {
         return id;
     }
