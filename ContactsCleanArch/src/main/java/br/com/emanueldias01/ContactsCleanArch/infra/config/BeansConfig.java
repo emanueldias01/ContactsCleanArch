@@ -3,6 +3,7 @@ package br.com.emanueldias01.ContactsCleanArch.infra.config;
 import br.com.emanueldias01.ContactsCleanArch.application.gateways.ContactRepository;
 import br.com.emanueldias01.ContactsCleanArch.application.usecases.CreateContact;
 import br.com.emanueldias01.ContactsCleanArch.application.usecases.ListContacts;
+import br.com.emanueldias01.ContactsCleanArch.domain.entities.ContactFactory;
 import br.com.emanueldias01.ContactsCleanArch.infra.gateways.RepositoryContactEntityJpa;
 import br.com.emanueldias01.ContactsCleanArch.infra.persistence.ContactEntityRepository;
 import org.springframework.context.annotation.Bean;
@@ -22,7 +23,12 @@ public class BeansConfig {
     }
 
     @Bean
-    RepositoryContactEntityJpa repositoryContactEntityJpa(ContactEntityRepository repository){
-        return new RepositoryContactEntityJpa(repository);
+    RepositoryContactEntityJpa repositoryContactEntityJpa(ContactEntityRepository repository, ContactFactory factory){
+        return new RepositoryContactEntityJpa(repository, factory);
+    }
+
+    @Bean
+    ContactFactory contactFactory(){
+        return new ContactFactory();
     }
 }

@@ -19,7 +19,7 @@ public class Contact {
     }
 
     public void setName(String name) {
-        if(name.length() < 3){
+        if(name.length() < 3 || name == null){
             throw new RuntimeException("O nome de um contato deve ter no mínimo 3 caracteres");
         }else {
             this.name = name;
