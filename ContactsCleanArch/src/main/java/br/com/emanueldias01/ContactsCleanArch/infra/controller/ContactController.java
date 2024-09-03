@@ -17,12 +17,9 @@ public class ContactController {
     private final CreateContact createContact;
     private final ListContacts listContacts;
 
-    private final ContactFactory factory;
-
-    public ContactController(CreateContact createContact, ListContacts listContacts, ContactFactory factory) {
+    public ContactController(CreateContact createContact, ListContacts listContacts) {
         this.createContact = createContact;
         this.listContacts = listContacts;
-        this.factory = factory;
     }
 
     @GetMapping
@@ -32,6 +29,7 @@ public class ContactController {
 
     @PostMapping
     public Contact newContact(@RequestBody ContactDto dto){
+        ContactFactory factory = new ContactFactory();
         Contact contact = factory.createContact(dto.name(), dto.phone());
         return createContact.createContact(contact);
     }
