@@ -12,6 +12,10 @@ public class ContactEntity {
     private String name;
     private Long phone;
 
+    public ContactEntity(){
+
+    }
+
     public ContactEntity(String name, Long phone){
         this.name = name;
         this.phone = phone;
