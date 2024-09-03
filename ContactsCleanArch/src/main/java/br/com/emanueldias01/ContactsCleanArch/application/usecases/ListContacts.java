@@ -13,7 +13,7 @@ public class ListContacts {
         this.contactRepository = contactRepository;
     }
 
-    public List<Contact> listContacts(){
+    public List<Contact> listAllContacts(){
         return contactRepository.listAll();
     }
 }
